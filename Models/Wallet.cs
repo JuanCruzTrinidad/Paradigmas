@@ -15,4 +15,8 @@ public class Wallet {
 
     public Wallet () {}
 
+    public override string ToString() { 
+        string CoinsToDisplayString = string.Join(", ", this.CoinsToDisplay);
+        return $"Id: {this.Id}, Url: {this.Url}, Name: {this.Name}, Security: {this.Security},  EaseOfUse: {this.EaseOfUse}, Recommended: {this.Recommended},Sponsored: {this.Sponsored}, Coins: {CoinsToDisplayString}";
+        }
     }

@@ -2,15 +2,15 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-public class WalletResponse{
+public class ApiCriptoResponse<T>{
 
     public string Response { get; set; }
     public string Message { get; set; }
     public bool HasWarning { get; set; }
     public int Type { get; set; }
-    public WalletList Data {get; set;}
+    public T Data {get; set;}
 
-    public WalletResponse () {}
+    public ApiCriptoResponse () {}
 }
 
 public class WalletList { 
@@ -28,4 +28,10 @@ public class WalletList {
     public List<Wallet> GetWalletList ()  { 
         return new List<Wallet> { Ejemplo1, Ejemplo2, Ejemplo3, Ejemplo4 };
     }
+}
+
+public class CoinInfoResponse { 
+
+    public CoinInfo CoinInfo { get; set; }
+    public CoinInfoResponse() {}
 }

@@ -12,7 +12,7 @@ public class WalletServices {
         HttpClient client = new HttpClient();
         HttpResponseMessage response = client.GetAsync("https://min-api.cryptocompare.com/data/wallets/general?api_key=1fd28f2ef148e8bb4f671fe400001d5ebe81de6aec5c862391680e1c49b1c83b").Result;
         byte[] data = response.Content.ReadAsByteArrayAsync().Result;
-        WalletResponse walletResponse = JsonSerializer.Deserialize<WalletResponse>(data);
+        ApiCriptoResponse<WalletList> walletResponse = JsonSerializer.Deserialize<ApiCriptoResponse<WalletList>>(data);
         return walletResponse.Data.GetWalletList();
      }
 
